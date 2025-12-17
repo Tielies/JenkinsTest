@@ -4,6 +4,12 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
+                sh 'python hello.py'
+            }
+        }
+        stage('test') {
+            steps {
+                sh 'python -m unittest test_hello.py'
             }
         }
     }
